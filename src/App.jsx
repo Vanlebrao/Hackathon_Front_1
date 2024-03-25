@@ -1,3 +1,5 @@
+
+import { Login } from "./pages/Login";
 import { Layout } from "./components/Layout/Layout";
 import RoutesApp from "./routes/routesApp";
 import { BrowserRouter } from "react-router-dom";
@@ -7,11 +9,12 @@ function App() {
   return (
     <BrowserRouter >
       <GlobalStyle />
+         <Login />
       <Layout>
         <RoutesApp />
       </Layout>
     </BrowserRouter>
-    
+
   );
 }
 

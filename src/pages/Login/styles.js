@@ -58,8 +58,10 @@ export const AreaInput = styled.div`
             color: #63384a;
         }
 
-        @media(width >= 1024px) {
-            width: 85%;
+        
+
+        @media(width >= 1024px) and (width <= 1920px) {
+            width: 100%;
             margin-top: 25%;
         }
 
@@ -87,8 +89,8 @@ export const AreaInput = styled.div`
             color: #63384a;
         }
 
-        @media(width >= 1024px) {
-            width: 85%;
+        @media(width >= 1024px) and (width <= 1920px) {
+            width: 100%;            
         }
 
         @media(width: 768px) {

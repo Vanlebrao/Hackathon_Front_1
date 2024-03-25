@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+
 export const GlobalStyles = createGlobalStyle`
     * {
         margin: 0;
@@ -9,3 +10,4 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "Poppins", sans-serif;
     }
 `;
+

@@ -1,18 +1,21 @@
-
-import { Login } from "./pages/Login";
 import { Layout } from "./components/Layout/Layout";
-import RoutesApp from "./routes/routesApp";
+import PublicRoutes from "./routes/publicRoutes";
+import PrivateRoutes from "./routes/privateRoutes";
 import { BrowserRouter } from "react-router-dom";
-import GlobalStyle from './globalStyles';
+import { useState } from "react";
 
 function App() {
+
+  const [acesso, setAcesso] = useState(false)
+
   return (
     <BrowserRouter >
-      <GlobalStyle />
-         <Login />
+    <PublicRoutes />
+     {/* {acesso && 
       <Layout>
-        <RoutesApp />
+        <PrivateRoutes /> 
       </Layout>
+      } */}
     </BrowserRouter>
 
   );

@@ -6,16 +6,14 @@ import { useState } from "react";
 
 function App() {
 
-  const [acesso, setAcesso] = useState(false)
+  const [token, setToken] = useState(false)
 
   return (
     <BrowserRouter >
     <PublicRoutes />
-     {/* {acesso && 
       <Layout>
-        <PrivateRoutes /> 
+        <PrivateRoutes isAuthenticated={token}/> 
       </Layout>
-      } */}
     </BrowserRouter>
 
   );

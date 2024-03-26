@@ -39,19 +39,18 @@ export const AreaInput = styled.div`
     }
 `;
 export const InputLogin = styled.input`
-        padding: 15px;
-        font-size: 18px;
-        border-radius: 30px;
-        border: 2px solid #1e6e36;
-        width: 100%;
-        font-size: 20px;
-        color: #63384a;
-        background-color: green;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: 2px solid #1e6e36;
+    width: 100%;
+    font-size: 20px;
+    color: #63384a;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-        &::placeholder {
-            color: #63384a;
-        }
+    &::placeholder {
+        color: #63384a;
+    }
 
 `
 

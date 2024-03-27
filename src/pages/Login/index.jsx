@@ -7,8 +7,8 @@ export const Login = () => {
             <C.Container>
                 <C.Logo src={Logo} alt="Logo" />
                 <C.AreaInput>
-                    <C.InputLogin type="text" placeholder="Username" />
-                    <C.InputLogin type="password" placeholder="Password" />
+                    <C.InputLogin type="text" placeholder="Seu Email" />
+                    <C.InputLogin type="password" placeholder="Sua Senha" />
                     <p>Forgot Password</p>
                     <C.ButtonLogin>Login</C.ButtonLogin>
                 </C.AreaInput>                                

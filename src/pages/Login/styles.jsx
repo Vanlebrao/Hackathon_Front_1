@@ -38,6 +38,7 @@ export const AreaInput = styled.div`
         cursor: pointer;
     }
 `;
+
 export const InputLogin = styled.input`
     padding: 15px;
     font-size: 18px;
@@ -53,7 +54,6 @@ export const InputLogin = styled.input`
     }
 
 `
-
 
 export const ButtonLogin = styled.button`
     background-color: #63384a;

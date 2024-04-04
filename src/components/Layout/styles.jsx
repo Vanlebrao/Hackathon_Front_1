@@ -16,7 +16,7 @@ export const LayoutPages = styled.div`
     flex: 1;  
     height: 100%;  
     border-radius: 20px 0 0 0;
-    background-color: #d1d1d1;
+    background-color: #eae1fd;
     padding: 20px;
     overflow-y: scroll;
 `

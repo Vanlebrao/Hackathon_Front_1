@@ -2,8 +2,7 @@ import * as S from './styles'
 
 import { NavMenuItem } from './components/NavMenuItem/NavMenuItem'
 
-import { FaRegCalendarAlt, FaHome } from "react-icons/fa";
-import { GiTomato } from "react-icons/gi";
+import { FaRegCalendarAlt, FaHome, FaBook } from "react-icons/fa";
 
 export function Navigation(){
     return(
@@ -14,7 +13,7 @@ export function Navigation(){
                     <S.NavigationMenu>
                         <NavMenuItem icon={<FaHome />} text={'Home'} link={'/'}/>
                         <NavMenuItem icon={<FaRegCalendarAlt />} text={'Calendario'} link={'/calendar'}/>
-                        <NavMenuItem icon={<GiTomato />} text={'Pomodoro'} link={'/pomodoro'}/>
+                        <NavMenuItem icon={<FaBook />} text={'Estudos'} link={'/estudos'}/>
                     </S.NavigationMenu>
                 </S.NavigationWrapperMenu>
                     <p>Direitos</p>

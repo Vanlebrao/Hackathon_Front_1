@@ -1,27 +1,27 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
 
-import { Home } from '../pages/Home/Home'
 import { Calendar } from "../pages/Calendar/Calendar";
-import { Pomodoro } from "../pages/Pomodoro/Pomodor";
+import { Home } from '../pages/Home/Home';
+import { Estudos } from "../pages/Estudos/Estudos";
 import { useEffect } from "react";
 
-  export default function RoutesApp({isAuthenticated}) {
+  export default function RoutesApp({token}) {
 
     const navigate = useNavigate()
 
     const isAuth = () => {
-      !isAuthenticated  && navigate("/login")
+      !token && navigate("/login")
     }
-
+  
     useEffect(() => {
       isAuth()
-    }, [isAuthenticated])
+    }, [token])
 
     return (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/calendar" element={<Calendar />} />
-          <Route path="/pomodoro" element={<Pomodoro />} />
+          <Route path="/estudos" element={<Estudos />} />
         </Routes>
 
     );

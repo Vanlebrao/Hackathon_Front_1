@@ -10,6 +10,7 @@ export const HomeWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    color: ${props => props.theme.colors.purple_500};
 
 `
 

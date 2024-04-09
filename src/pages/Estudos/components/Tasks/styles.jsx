@@ -6,12 +6,12 @@ export const TasksApp = styled.div`
     width: 600px;
     height: 100%;
     border-radius: 25px;
-    background-color: ${props => props.theme.colors.gray_200};
+    background-color: ${props => props.theme.colors.gray_100};
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 1px 1px 15px black;
+    box-shadow: 1px 1px 15px${props => props.theme.colors.gray_600};
 
 `
 
@@ -21,7 +21,7 @@ export const TaskContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:8px;
+    gap:15px;
     overflow: auto;
 
 `
@@ -34,7 +34,9 @@ export const TaskHeader = styled.div`
 
 export const Title = styled.div`
     padding:15px;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
+
 
     & span{
         font-size: 13px;

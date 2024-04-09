@@ -5,21 +5,38 @@ export const  week = [
         aulas: [
             {
                 id:1,
-                status: "iniciado",
+                status: "pronto",
                 materia:"Estudar React e completar apostila",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 1
             },
             { 
                 id:2,
                 status: "pendente",
                 materia: "Fazer outra coisa",
-                tempo: "1:00"
+                tempo: "2:00",
+                id_week: 1
             },
             {
                 id:3,
                 status: "pronto",
                 materia: "Estudar Node",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 1
+            },
+            { 
+                id:4,
+                status: "pendente",
+                materia: "Exercicio",
+                tempo: "2:00",
+                id_week: 1
+            },
+            {
+                id:5,
+                status: "pronto",
+                materia: "Meditar",
+                tempo: "1:00",
+                id_week: 1
             },
         ]
     },
@@ -31,32 +48,37 @@ export const  week = [
                 id:1,
                 status: "pendente",
                 materia:"Estudar React",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 2
             },
             {
                 id:1,
                 status: "pendente",
                 materia:"Estudar React",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 2
             },
             {
                 id:1,
                 status: "pendente",
                 materia:"Estudar React",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 2
             },
             {
                 id:1,
                 status: "pendente",
                 materia:"Estudar React",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 2
             },
 
             {
                 id:1,
                 status: "pendente",
                 materia:"Estudar React",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 2
             },
             
         ]
@@ -69,13 +91,15 @@ export const  week = [
                 id:1,
                 status: "pendente",
                 materia:"Estudar React",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 3
             },
             {
                 id:2,
                 status: "pendente",
                 materia: "Fazer outra coisa",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 3
             }
         ]
     },
@@ -87,13 +111,15 @@ export const  week = [
                 id:1,
                 status: "pendente",
                 materia:"Estudar React",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 4
             },
             {
                 id:2,
                 status: "pendente",
                 materia: "Fazer outra coisa",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 4
             }
         ]
     },
@@ -105,13 +131,15 @@ export const  week = [
                 id:1,
                 status: "pendente",
                 materia:"Estudar React",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 5
             },
             {
                 id:2,
                 status: "pendente",
                 materia: "Fazer outra coisa",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 5
             }
         ]
     },
@@ -123,13 +151,15 @@ export const  week = [
                 id:1,
                 status: "pendente",
                 materia:"Estudar React",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 66
             },
             {
                 id:2,
                 status: "pendente",
                 materia: "Fazer outra coisa",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 6
             }
         ]
     },
@@ -141,13 +171,15 @@ export const  week = [
                 id:1,
                 status: "pendente",
                 materia:"Estudar React",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 7
             },
             {
                 id:2,
                 status: "pendente",
                 materia: "Fazer outra coisa",
-                tempo: "1:00"
+                tempo: "1:00",
+                id_week: 7
             },
         ]
     },

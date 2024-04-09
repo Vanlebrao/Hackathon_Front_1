@@ -5,8 +5,8 @@ export const PomodoroApp = styled.div`
     width: 400px;
     min-height: 350px;
     border-radius: 25px;
-    background-color: #e6e6e6;
-    box-shadow: 1px 1px 15px black;
+    background-color: ${props => props.theme.colors.gray_100};
+    box-shadow: 1px 1px 15px${props => props.theme.colors.gray_600};
     padding: 15px;
     
     display: flex;
@@ -30,7 +30,7 @@ export const Status = styled.div`
 export const StatusStudy= styled.div`
     height: 80%;
     width: 50%;
-    border-radius: 25px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,7 +42,7 @@ export const StatusStudy= styled.div`
 export const StatusBreak= styled.div`
     height: 80%;
     width: 50%;
-    border-radius: 25px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;

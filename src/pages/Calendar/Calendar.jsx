@@ -9,7 +9,7 @@ export function Calendar(){
     return (
         <S.ContainerCalendar>
             <S.CalendarHeader>
-                <S.Title>SEMANA ATUAL</S.Title>
+                <S.Title>CRONOGRAMA SEMANAL</S.Title>
                 <S.Controls>
                     <S.Button>
                         <FaPlus />

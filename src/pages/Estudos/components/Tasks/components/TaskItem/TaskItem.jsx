@@ -1,17 +1,19 @@
 import * as S from "./styles"
-import { MdTimer, MdCheck } from "react-icons/md";
+import { MdCheck } from "react-icons/md";
+import trofeu from '../../../../../../assets/trofeu.jpg'
+import pendente from '../../../../../../assets/pendente.png'
 
 export function TaskItem({title, hour, status}){
 
     return(
-        <S.TaskItem>
+        <S.TaskItem status={status}>
             <S.Selected status={status}>
                 <MdCheck/>
             </S.Selected>
-            <S.Image><MdTimer /></S.Image>
+            <S.Image><img src={status === `pronto` ? trofeu : pendente} /> </S.Image>
             <S.Infos>
                 <S.Title status={status}>{title}</S.Title>
-                <S.Description>
+                <S.Description status={status}>
                     <span>{!status ? "Pendente" : "Concluido"}</span>
                     <span>{hour}</span>
                 </S.Description>

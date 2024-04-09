@@ -9,13 +9,12 @@ function App() {
   const [token, setToken] = useState(false)
 
   return (
-    <BrowserRouter >
-    <PublicRoutes />
-      <Layout>
+    <BrowserRouter >    
+    <PublicRoutes />      
+      <Layout>      
         <PrivateRoutes isAuthenticated={token}/> 
       </Layout>
     </BrowserRouter>
-
   );
 }
 

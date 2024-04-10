@@ -7,7 +7,7 @@ export const HeaderContainer= styled.header`
     padding: 8px 15px;;
     display: flex;
     justify-content: center;
-    background-color: #000000;
+    background-color: ${props => props.theme.colors.gray_900};
 `
 
 export const HeaderWrapper = styled.div`

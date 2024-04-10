@@ -18,7 +18,7 @@ export const NavigationWrapper = styled.div`
     align-items: center;
     gap: 5px;
     flex: 1;
-    background-color: #000000;
+    background-color: ${props => props.theme.colors.gray_900};
     color: white;
     padding: 5px;
 

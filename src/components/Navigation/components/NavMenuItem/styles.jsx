@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-export const NavMenuItemContainer = styled(Link)`
+export const NavMenuItemContainer = styled(NavLink)`
     width: 120%;
     flex: 1;
     display: flex;
@@ -17,10 +17,12 @@ export const NavMenuItemContainer = styled(Link)`
     gap: 20px;    
     position:relative;
 
+    &.active {
+        background-color: ${props => props.theme.colors.purple_500};
+    };
 
     &:hover{
-        color: black;
-        background-color: #ffffff;
+        background-color: ${props => props.theme.colors.purple_500};
     }
 `
 

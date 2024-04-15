@@ -38,6 +38,14 @@ export const  week = [
                 tempo: "1:00",
                 id_week: 1
             },
+
+            {
+                id:6,
+                status: "pronto",
+                materia: "Meditar",
+                tempo: "1:00",
+                id_week: 1
+            },
         ]
     },
     {

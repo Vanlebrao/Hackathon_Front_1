@@ -16,7 +16,7 @@ export const CelContent= styled.div`
 
     background-color: 
     ${({status, theme}) => status === 'pendente' 
-        ? theme.colors.light_red_500
+        ? theme.colors.gray_600
         : status === 'iniciado' 
         ? theme.colors.light_blue_700
         : theme.colors.light_green_700

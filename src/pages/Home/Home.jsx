@@ -9,11 +9,17 @@ export function Home(){
 
     const [navLink, setNavLink] = useState(0);
 
-    return(
-        <S.HomeContainer>
-            <S.HomeWrapper>
 
+    return(
+
+        
+        <S.HomeContainer>
+           
+            <S.HomeWrapper>
+                
                 <S.WrapperControl>
+                   
+
                     <PerfilHome />
                     <ImgHome navLink={navLink} setNavLink={setNavLink}/>
                 </S.WrapperControl>

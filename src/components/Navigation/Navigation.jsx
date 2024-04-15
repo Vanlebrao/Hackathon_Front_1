@@ -7,7 +7,6 @@ import { FaRegCalendarAlt, FaHome, FaBook } from "react-icons/fa";
 export function Navigation(){
     return(
         <S.NavigationContainer>
-            <h3>Dev Estudos</h3>
             <S.NavigationWrapper>
                 <S.NavigationWrapperMenu>
                     <S.NavigationMenu>

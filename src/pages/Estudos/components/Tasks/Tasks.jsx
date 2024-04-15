@@ -4,52 +4,26 @@ import { TaskItem } from './components/TaskItem/TaskItem';
 import { week } from '../../../../data/fakeDb';
 import { useEffect, useState } from 'react';
 
-const fakeData =[
-    {
-        id: 1,
-        title: "Estudar Logica de programacao",
-        status: true,
-        hour: "01:00"
-    },
-    {
-        id: 2,
-        title: "Estudar React",
-        status: false,
-        hour: "02:00"
-    },
-    {
-        id: 3,
-        title: "Fazer Exercicios Node",
-        status: true,
-        hour: "01:00"
-    },
-    {
-        id: 4,
-        title: "Academia",
-        status: false,
-        hour: "01:20"
-    },
-    {
-        id: 5,
-        title: "Ler  livro",
-        status: true,
-        hour: "01:00"
-    },
-]
-
 export function Tasks(){
     
     const [aulas, setAulas] = useState()
     const [pendentes, setPendentes] = useState(0)
+    const [dayWeek, setDayWeek] = useState('');
 
+    function getDayWeek() {
+        const date = new Date();
+        const dayWeekNumber = date.getDay();
+        const dayWeekList = ['domingo', 'segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
+        const daWeekName = dayWeekList[dayWeekNumber];
+        setDayWeek(daWeekName)  
+        week.filter((item) => item.day === dayWeek && setAulas(item.aulas)) 
+    }
+    
     useEffect(()=> {
-        week.filter((item) => item.day === `segunda` && setAulas(item.aulas))  
-    },[])
-
-    useEffect(()=> {
+        getDayWeek()
         setPendentes(0)
-        aulas && aulas.filter((aula) => aula.status === `pendente` && setPendentes(current => current +=1))  
-    },[aulas])
+        aulas && aulas.filter((aula) => aula.status === `pendente` && setPendentes(current => current +=1)) 
+    },[dayWeek, aulas])
 
     return(
     <S.TasksApp> 

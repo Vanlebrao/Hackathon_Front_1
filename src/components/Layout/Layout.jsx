@@ -7,7 +7,7 @@ export function Layout({children}){
         <S.LayoutContainer>
             <Navigation />
             <S.LayoutMain>
-                <Header />
+                {/* <Header /> */}
                 <S.LayoutPages>
                     {children}
                 </S.LayoutPages>

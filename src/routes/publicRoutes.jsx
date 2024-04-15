@@ -4,15 +4,18 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 
 export default function PublicRoutes({token}) {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const isAuth = () => {
-    token && navigate("/")
+  const handleClick = () => {
+      if(token){
+          navigate("/");
+      }
   }
-
-  useEffect(() => {
-    isAuth()
+  useEffect(() =>{
+      handleClick()
   }, [token])
+
+ 
     return (
         <Routes>
           <Route path="/login" element={<Login />} />

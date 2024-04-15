@@ -5,18 +5,19 @@ export const LayoutContainer = styled.div`
     width: 100vw;
     height: 100vh;
     display: flex;
+    align-items: center
 `
 
 export const LayoutMain = styled.div`
     width: 100%;
-    height: 90%;
+    height: 98%;
 `
 
 export const LayoutPages = styled.div`
     flex: 1;  
     height: 100%;  
-    border-radius: 20px 0 0 0;
-    background-color: #f4f0ff;
+    border-radius: 20px 0 0 20px;
+    background-color: #ffffff;
     padding: 20px;
     overflow-y: scroll;
 `

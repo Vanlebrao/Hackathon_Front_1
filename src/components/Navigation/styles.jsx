@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
 export const NavigationContainer = styled.div`
-    width: 200px;
+    /* width: 100px; */
     height: 100%;
     color: white;
-    padding: 15px 10px;
+    padding: 15px 0px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 
 `
 
@@ -16,12 +16,10 @@ export const NavigationWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
     flex: 1;
     background-color: ${props => props.theme.colors.gray_900};
     color: white;
-    padding: 5px;
-
+    padding-left: 15px;
 `
 
 export const NavigationWrapperMenu = styled.ul`
@@ -29,7 +27,7 @@ export const NavigationWrapperMenu = styled.ul`
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: flex-end;
 
 `
 
@@ -38,7 +36,8 @@ export const NavigationMenu = styled.ul`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
+
 `
 
 

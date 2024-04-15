@@ -1,18 +1,18 @@
 import styled from 'styled-components'
 
-
 export const PomodoroApp = styled.div`
-    width: 400px;
-    min-height: 350px;
+    min-width: 350px;
     border-radius: 25px;
     background-color: ${props => props.theme.colors.gray_100};
     box-shadow: 1px 1px 15px${props => props.theme.colors.gray_600};
     padding: 15px;
+    gap:20px;
     
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    flex: 1;
 
 `
 
@@ -100,12 +100,14 @@ export const Controls = styled.div`
     width: 80%;
     display: flex;
     justify-content: space-around;
+    gap: 20px;
 
 `
 export const PrimaryButton = styled.div`
     width: 150px;
     height: 50px;
     display: flex;
+    flex: 1;
     border-radius: 15px;
     justify-content: center;
     align-items: center;
@@ -123,10 +125,9 @@ export const PrimaryButton = styled.div`
     }
 `
 export const SecondButton = styled.div`
-    width: 50px;
-    height: 50px;
+    width: 80px;
     display: flex;
-    border-radius: 50px;
+    border-radius: 15px;
     justify-content: center;
     align-items: center;
     background-color: ${props => props.theme.colors.purple_500};
@@ -156,13 +157,9 @@ export const CiclosWrapper = styled.div`
         height: 40px;
         border-radius: 10px;
         border: 3px solid ${props => props.theme.colors.purple_500};
-
         display: flex;
         align-items: center;
         justify-content: center;  
-        
         font-size: 14px;
-
-
     }
 `

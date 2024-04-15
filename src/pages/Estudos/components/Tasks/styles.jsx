@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 
 export const TasksApp = styled.div`
-    width: 600px;
-    height: 100%;
+    min-width: 50%;
+    max-height: 100%;
     border-radius: 25px;
     background-color: ${props => props.theme.colors.gray_100};
     padding: 10px;
@@ -28,8 +28,6 @@ export const TaskContainer = styled.div`
 export const TaskHeader = styled.div`
     width: 100%;
     display: flex;
-
-
 `
 
 export const Title = styled.div`

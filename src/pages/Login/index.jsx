@@ -1,7 +1,9 @@
 import * as C from './styles';
 import Logo from '../../assets/logo.png';
 
+
 export const Login = () => {
+
     return (
         <C.Wrapper>
             <C.Container>
@@ -9,7 +11,7 @@ export const Login = () => {
                 <C.AreaInput>
                     <C.InputLogin type="text" placeholder="Seu Email" />
                     <C.InputLogin type="password" placeholder="Sua Senha" />
-                    <p>Forgot Password</p>
+                    <p>Esqueci Minha Senha</p>
                     <C.ButtonLogin>Login</C.ButtonLogin>
                 </C.AreaInput>                                
             </C.Container>            

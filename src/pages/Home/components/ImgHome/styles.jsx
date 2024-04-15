@@ -2,9 +2,11 @@ import styled from 'styled-components'
 
 export const WrapperImgHome = styled.div`
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: flex-end;
+    gap: 30px;
 `
 
 export const NavHome = styled.ul`
@@ -52,14 +54,18 @@ export const CardImg = styled.div`
 export const ImgTitle = styled.span`
     font-size: 20px;
     font-weight: bold;
+
 `
 
 export const WrapperImg = styled.div`
     width: 100%;
+    height:100%;
+    border-right: 3px solid black;
     border-radius: 15px;
     overflow: hidden;
     
     & img{
         width: 100%;
+        height: 100%;
     }
 `

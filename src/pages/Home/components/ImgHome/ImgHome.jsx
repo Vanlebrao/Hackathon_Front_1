@@ -1,24 +1,31 @@
 import * as S from './styles'
+import estudos from '../../../../assets/estudos.png'
+import calendario from '../../../../assets/calendario.png'
+import { useState } from 'react'
+import { FaEye, FaEyeSlash} from "react-icons/fa";
+
+
 
 export default function ImgHome({navLink, setNavLink}){
 
   const Titles = ['Bem Vindo', 'Cronograma Semanal', 'Estudos', 'Habitos']
-  const Imgs = [
-      'https://s2-techtudo.glbimg.com/SSAPhiaAy_zLTOu3Tr3ZKu2H5vg=/0x0:1024x609/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2022/c/u/15eppqSmeTdHkoAKM0Uw/dall-e-2.jpg',
-      'https://t.ctcdn.com.br/JlHwiRHyv0mTD7GfRkIlgO6eQX8=/640x360/smart/i257652.jpeg',
-      'https://imagens.usp.br/wp-content/uploads/Campus-15-Foto-Marcos-Santos20101220_066.jpg',
-      'https://img.freepik.com/fotos-gratis/uma-pintura-de-um-lago-de-montanha-com-uma-montanha-ao-fundo_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1712966400&semt=ais'
-    
-    ]
-  
+  const Imgs = [ estudos, calendario, estudos, calendario ]
+  // const [isVisible, setIsVisible] = useState(false)
     return(
         <S.WrapperImgHome>
+            {/* <div style={{border: '1px solid #8a8a8a', width: '200px', display: 'flex', justifyContent: 'space-between', padding: '5px', borderRadius: '5px', }}>
+                <input style={{border: 'none', color: '#8a8a8a'}} type={isVisible ? 'text' : 'password'} />
+                <button style={{flex: 1, border: 'none', background: 'transparent', color: '#8a8a8a', cursor:'pointer'}} 
+                  onMouseDown={() => setIsVisible(true)} 
+                  onMouseUp={() => setIsVisible(false)} 
+                >{isVisible ? <FaEye /> : <FaEyeSlash/>}</button>
+            </div> */}
         <S.NavHome>
             <S.NavHomeItem className={navLink === 0 ? 'active' : ''} onClick={() => setNavLink(0)}>
               <span>Bem Vindo</span>
             </S.NavHomeItem>
             <S.NavHomeItem className={navLink === 1 ? 'active' : ''} onClick={() => setNavLink(1)}>
-              <span>Cronograma Semanal</span>  
+              <span>Cronograma</span>  
             </S.NavHomeItem>
             <S.NavHomeItem className={navLink === 2 ? 'active' : ''} onClick={() => setNavLink(2)}>
               <span>Estudos</span>  

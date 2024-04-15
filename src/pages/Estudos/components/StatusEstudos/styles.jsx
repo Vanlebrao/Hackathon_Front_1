@@ -55,7 +55,10 @@ export const WrapperImgText = styled.div`
     & p {
         font-size: 32px;
         font-weight: bold;
-        color: ${props => props.theme.colors.light_red_600};
+        color: ${props => !props.isFinish 
+        ? props.theme.colors.light_red_600
+        : props.theme.colors.light_green_500
+    }
     }
 
     & span{ 
@@ -75,27 +78,42 @@ export const WrapperImgSubText = styled.div`
     }
 `
 
-
-
-
 export const StatusNumberTasks = styled.div`
     display: flex;
     gap: 5px;
     font-weight: bold;
     font-size: 42px;
-    color: ${props => props.theme.colors.light_red_600};
+    color: ${props => !props.isFinish 
+        ? props.theme.colors.light_red_600
+        : props.theme.colors.light_green_500
+    };
 `
 export const TimerBar = styled.div`
     width:  100%;
     height: 30px;
     margin-bottom: 5px;
+    position: relative;
+
+    & p{
+        position: absolute;
+        right: 10px;
+        bottom: 3px;
+        color: ${props => !props.isFinish 
+        ? props.theme.colors.light_red_600
+        : props.theme.colors.white
+        };
+    }
+
 `
 
 export const TimerProgress = styled.div`
     width: ${({progress}) => `${progress}%`};
     height: 30px;
 	border-radius: 5px;
-    background-color: ${({ isFinishing, theme }) => !isFinishing ? theme.colors.purple_500  : theme.colors.light_red_500 };
+    background-color: ${props => !props.isFinish 
+        ? props.theme.colors.light_red_600
+        : props.theme.colors.light_green_500
+    };
 `
 
 export const PendenciasQuantity = styled.div`

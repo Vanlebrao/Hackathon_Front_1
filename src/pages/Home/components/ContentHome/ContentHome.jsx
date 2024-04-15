@@ -38,15 +38,15 @@ export default function ContentHome({navLink}){
         },
 
         {
-            title: 'Calendar',
+            title: 'Organize sua semana!',
             content: ` Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, magnam dolorum ipsam omnis excepturi error rem nam fugit, a exercitationem dolore accusamus veritatis amet ratione odio. Ipsa mollitia libero sed!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, magnam dolorum ipsam omnis excepturi error rem nam fugit, a exercitationem dolore accusamus veritatis amet ratione odio. Ipsa mollitia libero sed!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, magnam dolorum ipsam omnis excepturi error rem nam fugit, a exercitationem dolore accusamus veritatis amet ratione odio. Ipsa mollitia libero sed!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, magnam dolorum ipsam omnis excepturi error rem nam fugit, a exercitationem dolore accusamus veritatis amet ratione odio. Ipsa mollitia libero sed!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, magnam dolorum ipsam omnis excepturi error rem nam fugit, a exercitationem dolore accusamus veritatis amet ratione odio. Ipsa mollitia libero sed!`
         },
         {
-            title: 'Estudos',
+            title: 'Como Estudar?',
             content: ` Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, magnam dolorum ipsam omnis excepturi error rem nam fugit, a exercitationem dolore accusamus veritatis amet ratione odio. Ipsa mollitia libero sed!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, magnam dolorum ipsam omnis excepturi error rem nam fugit, a exercitationem dolore accusamus veritatis amet ratione odio. Ipsa mollitia libero sed!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, magnam dolorum ipsam omnis excepturi error rem nam fugit, a exercitationem`
         },
         {
-            title: 'Habitos',
+            title: 'Crie seus Habitos!',
             content: ( 
                 <div> 
                     <p>

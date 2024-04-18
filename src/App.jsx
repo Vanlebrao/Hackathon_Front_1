@@ -12,16 +12,16 @@ function App() {
   const [token, setToken] = useState(true)
 
   return (
-    <DateProvider>
-      <BrowserRouter >
-        <ThemeProvider theme={theme}>
-          <PublicRoutes token={token}/>
-            <Layout>
-              <PrivateRoutes token={token}/> 
-            </Layout>
-        </ThemeProvider>
-      </BrowserRouter>
-    </DateProvider>
+    <BrowserRouter >
+      <ThemeProvider theme={theme}>
+        <PublicRoutes token={token}/>
+        {token && 
+          <Layout>
+            <PrivateRoutes token={token}/> 
+          </Layout>
+        }
+      </ThemeProvider>
+    </BrowserRouter>
 
   );
 }

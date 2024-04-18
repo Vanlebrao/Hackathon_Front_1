@@ -18,7 +18,7 @@ export default function PublicRoutes({token}) {
  
     return (
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login />} />         
         </Routes>
 
     );

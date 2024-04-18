@@ -10,7 +10,7 @@ import { useEffect } from "react";
     const navigate = useNavigate();
 
     const handleClick = () => {
-        if(!token){
+        if(token){
             navigate("/login");
         }
     }

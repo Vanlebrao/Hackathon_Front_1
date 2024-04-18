@@ -12,7 +12,7 @@ export const  week = [
             },
             { 
                 id:2,
-                status: "pendente",
+                status: "pronto",
                 materia: "Fazer outra coisa",
                 tempo: "2:00",
                 id_week: 1
@@ -33,6 +33,14 @@ export const  week = [
             },
             {
                 id:5,
+                status: "pronto",
+                materia: "Meditar",
+                tempo: "1:00",
+                id_week: 1
+            },
+
+            {
+                id:6,
                 status: "pronto",
                 materia: "Meditar",
                 tempo: "1:00",
@@ -149,7 +157,7 @@ export const  week = [
         aulas: [
             {
                 id:1,
-                status: "pendente",
+                status: "pronto",
                 materia:"Estudar React",
                 tempo: "1:00",
                 id_week: 66

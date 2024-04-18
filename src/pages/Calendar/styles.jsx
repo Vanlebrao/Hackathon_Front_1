@@ -5,8 +5,8 @@ export const ContainerCalendar = styled.div`
     height: 100%;
     text-align: center;
     border-radius: 25px;
-    background-color: #e6e6e6;
-    box-shadow: 1px 1px 15px black;
+    background-color: ${props => props.theme.colors.white};
+    box-shadow: 1px 1px 15px${props => props.theme.colors.gray_600};
     padding: 15px;
 
     display: flex;

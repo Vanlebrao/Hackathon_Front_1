@@ -7,15 +7,17 @@ import { useEffect } from "react";
 
   export default function RoutesApp({token}) {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    const isAuth = () => {
-      !token && navigate("/login")
+    const handleClick = () => {
+        if(!token){
+            navigate("/login");
+        }
     }
-  
-    useEffect(() => {
-      isAuth()
+    useEffect(() =>{
+        handleClick()
     }, [token])
+  
 
     return (
         <Routes>

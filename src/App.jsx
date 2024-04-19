@@ -24,6 +24,7 @@ function App() {
   const [token, setToken] = useState(false)
 
   return (
+<<<<<<< HEAD
     <QueryClientProvider client={queryClient}>
       <DateProvider>
         <BrowserRouter >
@@ -36,6 +37,18 @@ function App() {
         </BrowserRouter>
       </DateProvider>
     </QueryClientProvider>
+=======
+    <BrowserRouter >
+      <ThemeProvider theme={theme}>
+        <PublicRoutes token={token}/>
+        {token && 
+          <Layout>
+            <PrivateRoutes token={token}/> 
+          </Layout>
+        }
+      </ThemeProvider>
+    </BrowserRouter>
+>>>>>>> 66a3dac027ee8c67f7a160337b6ea16501fbce6a
 
   );
 }

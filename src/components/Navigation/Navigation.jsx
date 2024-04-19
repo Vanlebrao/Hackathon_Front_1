@@ -2,9 +2,18 @@ import * as S from './styles'
 
 import { NavMenuItem } from './components/NavMenuItem/NavMenuItem'
 
-import { FaRegCalendarAlt, FaHome, FaBook, FaRegCalendarCheck  } from "react-icons/fa";
+import { FaRegCalendarAlt, FaHome, FaBook, FaRegCalendarCheck, FaOutdent  } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 export function Navigation(){
+    const navigate = useNavigate()
+
+    function signOut(){
+        localStorage.clear('token')
+        navigate('/login')
+    }
+    
+
     return(
         <S.NavigationContainer>
             <S.NavigationWrapper>
@@ -16,7 +25,7 @@ export function Navigation(){
                         <NavMenuItem icon={<FaRegCalendarCheck  />} text={'Habitos'} link={'/habitos'}/>
                     </S.NavigationMenu>
                 </S.NavigationWrapperMenu>
-                    <p>Direitos</p>
+                    <span onClick={signOut}><FaOutdent /></span>
             </S.NavigationWrapper>
         </S.NavigationContainer>
     )

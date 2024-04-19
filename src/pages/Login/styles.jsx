@@ -25,7 +25,7 @@ export const Logo = styled.img`
     height: 100px;
 `;
 
-export const AreaInput = styled.div`
+export const AreaInput = styled.form`
     display: flex;
     align-items: center;
     flex-direction: column;

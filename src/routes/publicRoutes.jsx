@@ -7,6 +7,7 @@ export default function PublicRoutes({token}) {
   const navigate = useNavigate();
 
   const handleClick = () => {
+    console.log(token);
       if(token){
           navigate("/");
       }
@@ -18,7 +19,7 @@ export default function PublicRoutes({token}) {
  
     return (
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login token={token}/>} />
         </Routes>
 
     );

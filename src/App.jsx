@@ -11,7 +11,7 @@ function App() {
 
   const [token, setToken] = useState(true)
 
-  return (
+  return (    
     <BrowserRouter >
       <ThemeProvider theme={theme}>
         <PublicRoutes token={token}/>
@@ -22,7 +22,6 @@ function App() {
         }
       </ThemeProvider>
     </BrowserRouter>
-
   );
 }
 

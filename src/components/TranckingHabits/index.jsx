@@ -1,19 +1,22 @@
+import { useState } from 'react';
 import * as C from './styles';
+import { theme } from '../../../theme';
 
 export const TranckingHabits = () => {
+    const [days, setDays] = useState(Array(31).fill(0));
+
     return (
-        <C.Wrapper>
-            <C.Container>
-                <C.InputsMain>
-                    <C.Input type="text" placeholder="Hábito"/>
-                    <label>Data início</label>
-                    <C.Input type="date" />
-                    <label>Data fim</label>
-                    <C.Input type="date" placeholder="Data de Fim"/>
-                    <C.Input type="text" placeholder="Horário"/>
-                    <C.Button>Salvar</C.Button>
-                </C.InputsMain>
-            </C.Container>
+        <C.Wrapper theme={theme.colors}>
+            <C.Input theme={theme.colors}>
+                <input type="text" placeholder="Digite o hábito #" />
+            </C.Input>            
+            <C.ContainerDays theme={theme.colors}>                                
+                    {days.map((day, index) => (                
+                        <C.Days key={index} theme={theme.colors}>
+                            {index + 1}
+                        </C.Days>                
+                    ))} 
+            </C.ContainerDays>   
         </C.Wrapper>
-    );
+    );    
 }

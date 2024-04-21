@@ -2,7 +2,7 @@ import { useState } from 'react';
 import * as C from './styles';
 import { theme } from '../../../theme';
 
-export const TranckingHabits = () => {
+export const TrackingHabits = () => {
     const [days, setDays] = useState(Array(31).fill(0));
 
     return (

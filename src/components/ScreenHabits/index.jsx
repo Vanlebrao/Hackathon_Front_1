@@ -1,6 +1,6 @@
 import * as C from './styles';
 
-export const TranckingHabits = () => {
+export const ScreenHabits = () => {
     return (
         <C.Wrapper>
             <C.Container>

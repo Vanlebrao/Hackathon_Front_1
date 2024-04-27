@@ -1,6 +1,6 @@
 import * as C from './styles';
 
-export const TrackingMes = () => {
+export const HabitsMes = () => {
     return (
         <C.Wrapper>
             <C.Container>

@@ -14,14 +14,11 @@
     "axios": "^1.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
     "react-hook-form": "^7.51.3",
     "react-icons": "^5.0.1",
-=======
-    "react-icons": "^5.1.0",
->>>>>>> 66a3dac027ee8c67f7a160337b6ea16501fbce6a
     "react-router-dom": "^6.22.3",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.8",
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",

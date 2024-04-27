@@ -61,8 +61,6 @@ export default function ContentHome({navLink}){
         },
         
 ]
-
-console.log(navLink);
     return(
         <S.ContentHomeContainer>
             <S.ContentHomeTitle>

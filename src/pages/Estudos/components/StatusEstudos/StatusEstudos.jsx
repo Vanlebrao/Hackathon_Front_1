@@ -1,87 +1,82 @@
-import * as S from './styles'
-import { useState, useEffect } from 'react';
-import pendente from '../../../../assets/pendente.png'
-import concluido from '../../../../assets/concluido.png'
+import * as S from "./styles";
+import { useState, useEffect } from "react";
+import pendente from "../../../../assets/pendente.png";
+import concluido from "../../../../assets/concluido.png";
 
-import { week } from '../../../../data/fakeDb';
-export function StatusEstudos(){
-    const [progress, setProgress] = useState(60)
-    const [isFinish, setIsFinish] = useState(false)
- 
-    const [aulas, setAulas] = useState()
-    const [pronto, setPronto] = useState(0)
-    const [dayWeek, setDayWeek] = useState('');
+export function StatusEstudos({ dataClass }) {
+  const [progress, setProgress] = useState();
+  const [isFinish, setIsFinish] = useState(false);
+  const [aulas, setAulas] = useState([]);
+  const [pendentes, setPendentes] = useState(0);
+  const [dayWeek, setDayWeek] = useState("");
+  const [totalAulas, setTotalAulas] = useState(0);
 
-    const [totalAulas, setTotalAulas] = useState(0)
+  function getDayWeek() {
+    const date = new Date();
+    const dayWeekNumber = date.getDay();
+    setDayWeek(dayWeekNumber);
+  }
 
-    function getDayWeek() {
-        const date = new Date();
-        const dayWeekNumber = date.getDay();
-        const dayWeekList = ['domingo', 'segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
-        const daWeekName = dayWeekList[dayWeekNumber];
-        setDayWeek(daWeekName)  
-        week.filter((item) => item.day === dayWeek && setAulas(item.aulas)) 
+  useEffect(() => {
+    getDayWeek();
+    if (dataClass) {
+      const aulasDoDia = dataClass.filter(
+        (item) => item.weekday_id === dayWeek,
+      );
+      setAulas(aulasDoDia);
+
+      const pendentesCount = aulasDoDia.reduce((acc, aula) => {
+        return !aula.status ? acc : acc + 1;
+      }, 0);
+
+      setPendentes(pendentesCount);
     }
-    
-    useEffect(()=> {
-        getDayWeek()
-        setPronto(0)    
-        aulas && aulas.filter((aula) => aula.status === `pronto` && setPronto(current => current += 1)) 
-        return 
-    },[dayWeek, aulas])
+  }, [dayWeek, dataClass]);
 
-    useEffect(() => {
-        aulas && setTotalAulas(aulas.length)
-        setProgress(Math.floor((pronto / totalAulas)*100))
-        if(pronto>=totalAulas){
-            setIsFinish(true)
-        }else{
-            setIsFinish(false)
-        }
-        return
-    }, [aulas, pronto])
+  useEffect(() => {
+    setTotalAulas(aulas.length);
+    const pronto = aulas.reduce((acc, aula) => {
+      return aula.status ? acc + 1 : acc;
+    }, 0);
+    setProgress(Math.floor((pronto / totalAulas) * 100));
+    setIsFinish(pronto >= totalAulas);
+  }, [aulas, totalAulas]);
 
-console.log(isFinish);
-    return(
-    <S.StatusEstudosApp> 
-        <S.StatusTasks>
-            <S.StatusTasksImg>
-            <S.WrapperImg>
-                <img src={pronto >= totalAulas ? concluido : pendente} alt="" />
-
-                </S.WrapperImg>
-                <S.WrapperImgText isFinish={isFinish}>
-                {pronto >= totalAulas
-                    ?  
-                    <>
-                    <p>Parabens!!!</p> 
-                        <S.WrapperImgSubText>
-                            <p>Voce possui nao possui mais nenhum tarefa pendente </p>
-                        </S.WrapperImgSubText> 
-                    </>
-                    :
-                    <>
-                    <p>Urgente!</p>         
-                        <S.WrapperImgSubText>
-                            <p>Voce possui </p>
-                            <S.PendenciasQuantity>
-                                {totalAulas - pronto}
-                            </S.PendenciasQuantity>
-                            <p> Tarefas Pendentes</p>
-                        </S.WrapperImgSubText> 
-                    </> 
-                }
-                               
-                </S.WrapperImgText>     
-            </S.StatusTasksImg>
-            <S.StatusNumberTasks isFinish={isFinish}>
-                <span>{aulas && `${pronto}/${totalAulas}`}</span>
-            </S.StatusNumberTasks>
-        </S.StatusTasks>
-        <S.TimerBar isFinish={isFinish}>
-            <p>{progress}%</p>
-            <S.TimerProgress progress={progress} isFinish={isFinish} />
-        </S.TimerBar>
+  return (
+    <S.StatusEstudosApp>
+      <S.StatusTasks>
+        <S.StatusTasksImg>
+          <S.WrapperImg>
+            <img src={isFinish ? concluido : pendente} />
+          </S.WrapperImg>
+          <S.WrapperImgText isFinish={isFinish}>
+            {isFinish ? (
+              <>
+                <p>Parabéns!!!</p>
+                <S.WrapperImgSubText>
+                  <p>Você não possui mais nenhuma tarefa pendente.</p>
+                </S.WrapperImgSubText>
+              </>
+            ) : (
+              <>
+                <p>Urgente!</p>
+                <S.WrapperImgSubText>
+                  <p>Você possui </p>
+                  <S.PendenciasQuantity>{pendentes}</S.PendenciasQuantity>
+                  <p>Tarefas Pendentes</p>
+                </S.WrapperImgSubText>
+              </>
+            )}
+          </S.WrapperImgText>
+        </S.StatusTasksImg>
+        <S.StatusNumberTasks isFinish={isFinish}>
+          <span>{`${pendentes}/${totalAulas}`}</span>
+        </S.StatusNumberTasks>
+      </S.StatusTasks>
+      <S.TimerBar isFinish={isFinish}>
+        <p>{progress}%</p>
+        <S.TimerProgress progress={progress} isFinish={isFinish} />
+      </S.TimerBar>
     </S.StatusEstudosApp>
-    )
+  );
 }

@@ -1,32 +1,51 @@
-import * as S from './styles'
+import * as S from "./styles";
 
-import { NavMenuItem } from './components/NavMenuItem/NavMenuItem'
+import { NavMenuItem } from "./components/NavMenuItem/NavMenuItem";
 
-import { FaRegCalendarAlt, FaHome, FaBook, FaRegCalendarCheck, FaOutdent  } from "react-icons/fa";
-import { useNavigate } from 'react-router-dom';
+import {
+  FaRegCalendarAlt,
+  FaHome,
+  FaBook,
+  FaRegCalendarCheck,
+  FaOutdent,
+} from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import useBearStore from "../../state/state";
 
-export function Navigation(){
-    const navigate = useNavigate()
+export function Navigation() {
+  const navigate = useNavigate();
 
-    function signOut(){
-        localStorage.clear('token')
-        navigate('/login')
-    }
-    
+  const setIsUserValid = useBearStore((state) => state.setIsUserValid);
 
-    return(
-        <S.NavigationContainer>
-            <S.NavigationWrapper>
-                <S.NavigationWrapperMenu>
-                    <S.NavigationMenu>
-                        <NavMenuItem icon={<FaHome />} text={'Home'} link={'/'}/>
-                        <NavMenuItem icon={<FaRegCalendarAlt />} text={'Calendario'} link={'/calendar'}/>
-                        <NavMenuItem icon={<FaBook />} text={'Estudos'} link={'/estudos'}/>
-                        <NavMenuItem icon={<FaRegCalendarCheck  />} text={'Habitos'} link={'/habitos'}/>
-                    </S.NavigationMenu>
-                </S.NavigationWrapperMenu>
-                    <span onClick={signOut}><FaOutdent /></span>
-            </S.NavigationWrapper>
-        </S.NavigationContainer>
-    )
+  function signOut() {
+    localStorage.removeItem("token");
+    setIsUserValid(false);
+    navigate("/login");
+  }
+
+  return (
+    <S.NavigationContainer>
+      <S.NavigationWrapper>
+        <S.NavigationWrapperMenu>
+          <S.NavigationMenu>
+            <NavMenuItem icon={<FaHome />} text={"Home"} link={"/home"} />
+            <NavMenuItem
+              icon={<FaRegCalendarAlt />}
+              text={"Calendario"}
+              link={"/calendar"}
+            />
+            <NavMenuItem icon={<FaBook />} text={"Estudos"} link={"/estudos"} />
+            <NavMenuItem
+              icon={<FaRegCalendarCheck />}
+              text={"Habitos"}
+              link={"/habitos"}
+            />
+          </S.NavigationMenu>
+        </S.NavigationWrapperMenu>
+        <span onClick={signOut}>
+          <FaOutdent />
+        </span>
+      </S.NavigationWrapper>
+    </S.NavigationContainer>
+  );
 }

@@ -1,55 +1,26 @@
 import { Layout } from "./components/Layout/Layout";
-import PublicRoutes from "./routes/publicRoutes";
-import PrivateRoutes from "./routes/privateRoutes";
-import { BrowserRouter } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { ThemeProvider } from 'styled-components';
-import { theme } from "../theme"
+
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../theme";
 import { DateProvider } from "./components/DateProvider/DateProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import useBearStore from "./state/state";
 
 function App() {
+  const queryClient = new QueryClient();
 
-  const queryClient = new QueryClient()
-
-  useEffect(() => {
-    const tokenLocal = localStorage.getItem('token')
-    if(tokenLocal){
-      setToken(true)
-    }else{
-      setToken(false)
-    }
-  }, [])
-
-  const [token, setToken] = useState(false)
+  const token = useBearStore((state) => state.isUserValid);
+  console.log(token);
 
   return (
-<<<<<<< HEAD
     <QueryClientProvider client={queryClient}>
       <DateProvider>
-        <BrowserRouter >
-          <ThemeProvider theme={theme}>
-            <PublicRoutes token={token}/>
-              <Layout>
-                <PrivateRoutes token={token}/> 
-              </Layout>
-          </ThemeProvider>
-        </BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <Layout>{token ? <Outlet /> : <Navigate to={"login"} />}</Layout>
+        </ThemeProvider>
       </DateProvider>
     </QueryClientProvider>
-=======
-    <BrowserRouter >
-      <ThemeProvider theme={theme}>
-        <PublicRoutes token={token}/>
-        {token && 
-          <Layout>
-            <PrivateRoutes token={token}/> 
-          </Layout>
-        }
-      </ThemeProvider>
-    </BrowserRouter>
->>>>>>> 66a3dac027ee8c67f7a160337b6ea16501fbce6a
-
   );
 }
 

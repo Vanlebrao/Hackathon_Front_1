@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: ${props => props.theme.light_gray_300};
+    background-color: ${props => props.theme.gray_900};
     height: 100vh;
 `;
 
@@ -16,15 +16,13 @@ export const Container = styled.div`
     justify-content: center;
     border-radius: 20px;
     min-width: 500px;
-    height: 750px;
+    height: 90%;
 
 `;
 
 export const Logo = styled.img`
     width: 100px;
     height: 100px;
-    margin-top: -30%;
-    position: absolute;
 `;
 
 export const AreaInput = styled.form`

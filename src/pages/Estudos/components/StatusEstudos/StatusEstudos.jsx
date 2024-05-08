@@ -20,9 +20,7 @@ export function StatusEstudos({ dataClass }) {
   useEffect(() => {
     getDayWeek();
     if (dataClass) {
-      const aulasDoDia = dataClass.filter(
-        (item) => item.weekday_id === dayWeek,
-      );
+      const aulasDoDia = dataClass.filter((item) => item.id_day === dayWeek);
       setAulas(aulasDoDia);
 
       const pendentesCount = aulasDoDia.reduce((acc, aula) => {

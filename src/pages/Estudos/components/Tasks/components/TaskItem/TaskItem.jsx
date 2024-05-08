@@ -5,7 +5,9 @@ import medalha from "../../../../../../assets/medalha.png";
 import books from "../../../../../../assets/books.png";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import apiHackathon from "../../../../../../config/axiosConfig";
-import useUserIdStore from "../../../../../../state/userIdState";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export function TaskItem({
   idStatus,
@@ -19,17 +21,19 @@ export function TaskItem({
   const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: async (idParam) => {
-      const { data } = await apiHackathon.put(`/class/${idParam}`, {
+      const { data } = await apiHackathon.put(`/aula/${idParam}`, {
         status: !status,
       });
       return data;
     },
     onSuccess: (data) => {
       queryClient.invalidateQueries("dataClass");
-      onUpdateStatus(idStatus, !status); // Chama a função de atualização do pai
-      setStatus(!status); // Atualiza o estado local
+      onUpdateStatus(idStatus, !status);
+      setStatus(!status);
+      toast.success("Status atualizado com sucesso");
     },
     onError: (data) => {
+      toast.error("Erro ao atualizar status");
       console.log("error: ", data.message);
     },
   });

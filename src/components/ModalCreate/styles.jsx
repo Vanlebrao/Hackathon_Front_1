@@ -16,7 +16,7 @@ export const ContainerModal = styled.div`
   z-index: 999;
 `;
 
-export const WrapperModal = styled.div`
+export const WrapperModal = styled.form`
   width: 600px;
   height: 550px;
   text-align: center;

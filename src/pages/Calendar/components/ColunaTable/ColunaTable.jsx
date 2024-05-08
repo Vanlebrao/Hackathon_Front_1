@@ -1,69 +1,62 @@
 import { useState } from "react";
 import * as S from "./styles";
-import ModalClassEdit from "../../../../components/ModalClassEdit/ModalClassEdit";
 
-import medalha from "../../../../assets/medalha.png";
-import books from "../../../../assets/books.png";
 import useCourseStore from "../../../../state/couserState";
 
-export function ColunaTable({ classe, dataClass }) {
-  const [isVisible, setIsVisibel] = useState(false);
+export function ColunaTable({ classe }) {
   const [idClass, setIdClass] = useState(0);
 
   const setCourseEdit = useCourseStore((state) => {
-    console.log("Chamando setCourseEdit com valores:", state);
     return state.setCourseEdit;
   });
-  function handleText(string) {
-    if (string.length > 20) {
-      return `${string.slice(0, 20)}...`;
-    } else {
-      return string;
-    }
-  }
+
+  const courseEdit = useCourseStore((state) => {
+    return state.courseEdit;
+  });
 
   async function handleEdit() {
     await setCourseEdit({
+      id: classe.id,
       course: classe.course,
       module: classe.module,
       lesson: classe.lesson,
       time: classe.time,
-      weekday: classe.weekday.name,
+      status: classe.status,
+      id_day: classe.id_day,
     });
     setIdClass(classe.id);
-    setIsVisibel(true);
+  }
+
+  function formatText(text) {
+    return text.length > 8 ? `${text.slice(0, 9)}...` : text;
   }
 
   return (
     <S.ContainerColunaTable>
-      {isVisible && (
-        <ModalClassEdit
-          id={idClass}
-          dataClass={dataClass}
-          setIsVisibel={setIsVisibel}
-        />
-      )}
-
-      <S.CelContent key={classe.id} status={classe.status} onClick={handleEdit}>
+      <S.CelContent
+        key={classe.id}
+        status={classe.status}
+        onClick={() => {
+          handleEdit();
+        }}
+      >
         <S.CelContentOne>
           <div>
-            <span className="title">Curso: </span>
-            <span>{handleText(classe.course)}</span>
+            {/* <span className="title">Curso: </span> */}
+            <span style={{ fontWeight: "bold" }}>
+              {formatText(classe.course)}
+            </span>
           </div>
           <div>
-            <span className="title">Module: </span>
-            <span>{handleText(classe.module)}</span>
+            {/* <span className="title">Module: </span> */}
+            <span>{formatText(classe.module)}</span>
           </div>
           <div>
-            <span className="title">Aula: </span>
-            <span>{handleText(classe.lesson)}</span>
-          </div>
-          <div>
-            <span className="title">Tempo: </span>
-            <span>{handleText(classe.time)}</span>
+            {/* <span className="title">Aula: </span> */}
+            <span>{formatText(classe.lesson)}</span>
           </div>
         </S.CelContentOne>
-        <img src={classe.status ? medalha : books} />
+        {/* <img src={classe.status ? medalha : books} /> */}
       </S.CelContent>
     </S.ContainerColunaTable>
   );

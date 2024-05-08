@@ -20,10 +20,10 @@ export function Tasks({ dataClass }) {
   useEffect(() => {
     getDayWeek();
     if (dataClass) {
-      const aulasDoDia = dataClass.filter(
-        (item) => item.weekday_id === dayWeek,
-      );
+      const aulasDoDia = dataClass.filter((item) => item.id_day === dayWeek);
       const sortAulasDoDia = sortByNumber(aulasDoDia, "id");
+      console.log(sortAulasDoDia);
+      console.log(aulasDoDia);
       setAulas(sortAulasDoDia);
 
       const pendentesCount = aulasDoDia.reduce((acc, aula) => {

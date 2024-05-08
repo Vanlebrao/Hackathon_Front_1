@@ -26,7 +26,7 @@ export function Estudos() {
     queryKey: ["class"],
     queryFn: async () => {
       try {
-        const { data } = await apiHackathon.get("/class");
+        const { data } = await apiHackathon.get("/aula");
         return data;
       } catch (error) {
         throw new Error("Erro ao buscar dias da semana: " + error.message);

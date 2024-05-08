@@ -2,14 +2,13 @@ import styled from "styled-components";
 
 export const ContainerColunaTable = styled.div`
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 5px;
 `;
 export const CelContent = styled.div`
-  width: 100%;
+  min-width: 110px;
   padding: 10px;
   min-height: 70px;
   display: flex;
@@ -44,15 +43,16 @@ export const CelContentOne = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+
   flex: 1;
   font-size: 14px;
 
   & div {
-    width: 100%;
+    min-width: 70px;
+    min-height: 30px;
     display: flex;
+    text-align: left;
     gap: 10px;
-    justify-content: flex-start;
-    align-items: center;
 
     & .title {
       font-weight: bold;
